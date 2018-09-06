@@ -9,7 +9,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: golang
+      tag: golangsun
       pushRemote: true
       registry: index.docker.io
 timeout: 60
