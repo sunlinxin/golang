@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment # adjust name for your deployment
+spec:
+  replicas: 2 # adjust number of replicas for your deployment
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx # adjust name of container
+        image: nginx:latest # adjust image_name and tag for your container
+        ports:
+        - containerPort: 80 # adjust port for your container
