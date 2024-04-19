@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    kubeadmiral.io/propagation-policy-name: mypolicy
+    kubeadmiral.io/propagation-policy-name: pp-policy # 关联部署策略
+    kubeadmiral.io/override-policy-name: op-policay  # 关联差异化策略
   name: nginx-deployment # adjust name for your deployment
 spec:
   replicas: 2 # adjust number of replicas for your deployment
