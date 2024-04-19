@@ -1,0 +1,15 @@
+apiVersion: core.kubeadmiral.io/v1alpha1
+kind: OverridePolicy
+metadata:
+  name: op-policay
+spec:
+  overrideRules:
+  - overriders:
+      jsonpatch:
+      - operator: replace
+        path: /spec/template/spec/containers/0/image
+        value: nginx:xxxx
+    targetClusters:
+      clusters:
+      - ClusterID-01  # 替换为您的成员集群
+      - ClusterID-02  # 替换为您的成员集群
