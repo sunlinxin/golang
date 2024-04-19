@@ -1,0 +1,22 @@
+apiVersion: core.kubeadmiral.io/v1alpha1
+kind: PropagationPolicy
+metadata:
+  name: pp-policy
+spec:
+  disableFollowerScheduling: false
+  placement:
+  - cluster: ccl641am618l9kpmdkk10 # 替换为您的成员集群
+  - cluster: ccl641am618l9kpmdkk10 # 替换为您的成员集群
+  replicasStrategy: Spread
+  reschedulePolicy:
+    disableRescheduling: false
+    replicaRescheduling:
+      avoidDisruption: true
+    rescheduleWhen:
+      clusterAPIResourcesChanged: false
+      clusterJoined: false
+      clusterLabelsChanged: false
+      policyContentChanged: true
+  schedulingMode: Divide
+status:
+  refCount: 1
